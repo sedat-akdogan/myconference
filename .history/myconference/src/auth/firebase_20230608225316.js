@@ -25,7 +25,9 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_appId,
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
 export const createUser = async (email, password, navigate, displayName) => {
@@ -88,9 +90,13 @@ export const signUpWithGoogle = (navigate) => {
 export const forgotPassword = (email) => {
     sendPasswordResetEmail(auth, email)
         .then(() => {
+            // Password reset email sent!
             toastWarnNotify("Please check your mail box!");
+            // alert("Please check your mail box!");
         })
         .catch((err) => {
             toastErrorNotify(err.message);
+            // alert(err.message);
+            // ..
         });
 };
