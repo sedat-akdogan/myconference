@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import GoogleIcon from "../assets/GoogleIcon";
+import GoogleIcon from "../assets/icons/GoogleIcon";
 import { createUser, signUpWithGoogle } from "../auth/firebase";
 
 const Register = () => {
@@ -21,6 +21,9 @@ const Register = () => {
     const handleGoogleProvider = () => {
         signUpWithGoogle(navigate);
     };
+
+    // const hadleChange = (e) =>
+    //   setInfo({ ...info, [e.target.id]: e.target.value });
 
     return (
         <div className="flex justify-center">
