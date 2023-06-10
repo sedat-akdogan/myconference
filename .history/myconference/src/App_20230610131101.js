@@ -1,7 +1,7 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
-import  { AuthContextProvider } from "./context/AuthContext";
-import  { AppRouter } from "./router/AppRouter";
+import AuthContextProvider from "./context/AuthContext";
+import AppRouter from "./router/AppRouter";
 
 const App = () => {
     return (
@@ -11,7 +11,7 @@ const App = () => {
                 <ToastContainer />
             </AuthContextProvider>
         </div>
-    );
-};
+    )
+}
 
 export default App;  

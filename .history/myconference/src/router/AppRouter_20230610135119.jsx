@@ -21,6 +21,6 @@ const AppRouter = () => {
             </Routes>
         </BrowserRouter>
     );
-}
+};
 
-export { AppRouter };
+export AppRouter;

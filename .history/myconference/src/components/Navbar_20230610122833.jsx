@@ -2,11 +2,39 @@ import React from 'react';
 
 const Navbar = () => {
     return (
-        <nav
-            className="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-2 text-neutral-200 shadow-lg lg:flex-wrap lg:justify-start lg:py-4"
-            data-te-navbar-ref=""
+        <>
+            {/* Main navigation container */}
+            < nav
+                className="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-2 text-neutral-200 shadow-lg lg:flex-wrap lg:justify-start lg:py-4"
+                data - te - navbar - ref=""
         >
             <div className="flex w-full flex-wrap items-center justify-between px-3">
+                {/* Hamburger button for mobile view */}
+                <button
+                    className="block border-0 bg-transparent px-2 text-neutral-200 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+                    type="button"
+                    data-te-collapse-init=""
+                    data-te-target="#navbarSupportedContent4"
+                    aria-controls="navbarSupportedContent4"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    {/* Hamburger icon */}
+                    <span className="[&>svg]:w-7">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="h-7 w-7"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    </span>
+                </button>
                 {/* Collapsible navigation container */}
                 <div
                     className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
@@ -17,9 +45,61 @@ const Navbar = () => {
                     <a className="pr-2 text-xl font-semibold text-white" href="#">
                         Navbar
                     </a>
+                    {/* Left navigation links */}
+                    <ul
+                        className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
+                        data-te-navbar-nav-ref=""
+                    >
+                        {/* Dashboard link */}
+                        <li className="my-4 lg:my-0 lg:pr-2" data-te-nav-item-ref="">
+                            <a
+                                className="text-white disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="#"
+                                data-te-nav-link-ref=""
+                            >
+                                Dashboard
+                            </a>
+                        </li>
+                        {/* Team link */}
+                        <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref="">
+                            <a
+                                className="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="#"
+                                data-te-nav-link-ref=""
+                            >
+                                Team
+                            </a>
+                        </li>
+                        {/* Projects link */}
+                        <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref="">
+                            <a
+                                className="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80 disabled:text-black/30 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="#"
+                                data-te-nav-link-ref=""
+                            >
+                                Projects
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 {/* Right elements */}
                 <div className="relative flex items-center">
+                    {/* Cart Icon */}
+                    <a
+                        className="mr-4 text-white opacity-60 hover:opacity-80 focus:opacity-80"
+                        href="#"
+                    >
+                        <span className="[&>svg]:w-5">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-5 w-5"
+                            >
+                                <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                            </svg>
+                        </span>
+                    </a>
                     {/* Container with two dropdown menus */}
                     <div className="relative" data-te-dropdown-ref="">
                         {/* First dropdown trigger */}
@@ -146,7 +226,7 @@ const Navbar = () => {
                 </div>
                 {/* Right elements */}
             </div>
-        </nav>
+        </ >
     );
 };
 

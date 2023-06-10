@@ -23,4 +23,4 @@ const AppRouter = () => {
     );
 }
 
-export { AppRouter };
+export {AppRouter};

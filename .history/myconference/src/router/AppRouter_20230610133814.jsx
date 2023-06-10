@@ -16,11 +16,11 @@ const AppRouter = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/details/:id" element={<PrivateRouter />}>
-                    <Route path="" element={<Events />} />
+                    <Route path="" element={<Events />}/>
                 </Route>
             </Routes>
         </BrowserRouter>
     );
-}
+};
 
-export { AppRouter };
+export default AppRouter;
