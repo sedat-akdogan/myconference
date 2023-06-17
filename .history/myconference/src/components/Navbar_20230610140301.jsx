@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import avatar from "../assets/avatar.png";
+import avatar from "../assets/icons/avatar.png";
 import { logOut } from "../auth/firebase";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContextProvider";
 import Switch from "./Switch";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
             <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-white dark:bg-gray-900 dark:text-white shadow-lg navbar navbar-expand-lg fixed-top">
                 <div className="container-fluid w-full flex items-center justify-between px-6">
                     <Link className="text-2xl  pr-2 font-semibold" to="/">
-                        My Conference
+                        React Movie App
                     </Link>
                     {/* Collapsible wrapper */}
                     {/* Right elements */}
