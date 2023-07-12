@@ -38,7 +38,7 @@ export const createUser = async (email, password, navigate, displayName) => {
             email,
             password
         );
-        console.log("user: ", userCredential);
+        console.log(first)
         await updateProfile(auth.currentUser, {
             displayName: displayName,
         });
@@ -47,7 +47,7 @@ export const createUser = async (email, password, navigate, displayName) => {
         // console.log(userCredential);
     } catch (error) {
         toastErrorNotify(error.message);
-        alert(error.message);
+        // alert(error.message);
     }
 };
 

@@ -16,7 +16,11 @@ import {
     toastWarnNotify,
 } from "../helpers/ToastNotify";
 
-
+//* Your web app's Firebase configuration
+// TODO: Replace the following with your app's Firebase project configuration
+//* https://firebase.google.com/docs/auth/web/start
+//* https://console.firebase.google.com/ => project settings
+//! firebase console settings bölümünden firebaseconfig ayarlarını al
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_apiKey,
     authDomain: process.env.REACT_APP_authDomain,
@@ -32,13 +36,14 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export const createUser = async (email, password, navigate, displayName) => {
+    //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
     try {
         let userCredential = await createUserWithEmailAndPassword(
             auth,
             email,
             password
         );
-        console.log("user: ", userCredential);
+        //? kullanıcı profilini güncellemek için kullanılan firebase metodu
         await updateProfile(auth.currentUser, {
             displayName: displayName,
         });
@@ -47,7 +52,7 @@ export const createUser = async (email, password, navigate, displayName) => {
         // console.log(userCredential);
     } catch (error) {
         toastErrorNotify(error.message);
-        alert(error.message);
+        // alert(error.message);
     }
 };
 
@@ -63,6 +68,7 @@ export const signIn = async (email, password, navigate) => {
 };
 
 export const userObserver = (setCurrentUser) => {
+    //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
     onAuthStateChanged(auth, (user) => {
         if (user) {
             const { email, displayName, photoURL } = user;
